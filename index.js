@@ -47,5 +47,5 @@ app.post('/received', (req, res) => {
 app.use(express.json())
 
 app.listen(port, () => {
-  console.log('Server is running on port ' + port)
+  console.log('Server is running on port http://localhost:3001')
 })
