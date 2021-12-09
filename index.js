@@ -44,6 +44,18 @@ app.post('/received', (req, res) => {
   })
 })
 
+app.get('/delete/:id', (req, res) => {
+  Post.destroy({
+    where: {
+      'id': req.params.id
+    }
+  }).then(posts => {
+    res.redirect('/')
+  }).catch(err => {
+    res.send('Error: ' + err.message)
+  })
+})
+          
 app.use(express.json())
 
 app.listen(port, () => {
